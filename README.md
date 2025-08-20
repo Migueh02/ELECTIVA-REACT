@@ -1,99 +1,53 @@
-# Proyecto Next.js - mi-app
+Clase 1: Introducción a React, Inicialización y Estructura Básica
+1. Inicialización del proyecto
 
-Este proyecto fue creado utilizando [Next.js](https://nextjs.org) y el comando [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Se utilizó Next.js para crear el proyecto, lo que permite desarrollar aplicaciones React con funcionalidades avanzadas como enrutamiento automático y renderizado del lado del servidor.
+Se generó la estructura base del proyecto, incluyendo carpetas como src, public, y archivos de configuración como package.json, tsconfig.json, entre otros.
+2. Archivo layout.tsx
 
-## Pasos para crear el proyecto
+Este archivo define el layout global de la aplicación.
+Se importan fuentes personalizadas y estilos globales.
+El componente RootLayout envuelve toda la aplicación y asegura que los estilos y fuentes se apliquen en todas las páginas.
+Uso: Permite mantener una estructura y diseño consistente en toda la app, como cabeceras, pies de página o estilos generales.
+3. Archivo src/app/page.jsx (o page.tsx)
 
-1. **Instalación de Node.js**  
-   Asegúrate de tener instalado [Node.js](https://nodejs.org/).
+Es la página principal que se muestra al iniciar la aplicación.
+Aquí se pueden mostrar componentes principales, mensajes de bienvenida o menús.
+Uso: Sirve como punto de entrada visual para el usuario, donde se pueden integrar otros componentes y funcionalidades.
+4. Carpeta Components
 
-2. **Crear el proyecto con create-next-app**  
-   Ejecuta el siguiente comando en la terminal:
-   ```bash
-   npx create-next-app@latest mi-app --typescript
-   ```
-   Esto genera la estructura básica del proyecto en la carpeta `mi-app`.
+Se creó para organizar componentes reutilizables.
 
-3. **Instalación de dependencias adicionales**  
-   Se instalaron las siguientes dependencias y herramientas:
-   - Tailwind CSS y PostCSS para estilos:
-     ```bash
-     npm install tailwindcss@latest @tailwindcss/postcss@latest postcss@latest
-     ```
-   - ESLint para linting:
-     ```bash
-     npm install eslint@latest eslint-config-next@latest @eslint/eslintrc@latest
-     ```
+Archivo Boton.jsx
 
-4. **Configuración de Tailwind CSS**  
-   Se creó el archivo `postcss.config.mjs`:
-   ```js
-   const config = {
-     plugins: ["@tailwindcss/postcss"],
-   };
-   export default config;
-   ```
-   Y se configuró Tailwind en los archivos de estilos globales.
+Define un componente de botón personalizado.
+Recibe props como texto y onClick para mostrar diferentes textos y ejecutar funciones al hacer clic.
+Incluye estilos avanzados para mejorar la apariencia y experiencia de usuario.
+Uso: Permite reutilizar el mismo botón en diferentes partes de la app, manteniendo la lógica y el diseño centralizados.
+Archivo first.jsx
 
-5. **Estructura de carpetas**  
-   El proyecto tiene la siguiente estructura principal:
-   ```
-   .
-   ├── src/
-   │   ├── app/
-   │   │   ├── layout.tsx
-   │   │   └── page.tsx
-   │   └── components/
-   │       ├── boton.jsx
-   │       └── first.jsx
-   ├── public/
-   ├── .next/
-   ├── package.json
-   ├── postcss.config.mjs
-   ├── eslint.config.mjs
-   ├── tsconfig.json
-   └── README.md
-   ```
+Componente simple que muestra un saludo y un número.
+Uso: Ejemplo básico de cómo crear y exportar componentes en React.
+Clase 2: Carpeta Pages y Componentes con Estado/Efectos
+1. Carpeta pages
 
-6. **Primeros componentes**  
-   Se crearon componentes personalizados en `src/components/`, como [`boton`](src/components/boton.jsx) y [`first`](src/components/first.jsx).
+Se creó para agregar vistas adicionales y practicar el enrutamiento en Next.js.
 
-## Descripción de componentes
+Archivo vistaEffect.jsx
 
-### `src/app/layout.tsx`
-Este archivo define la estructura base de la aplicación, incluyendo el HTML principal, el `<head>`, y el layout general que se aplica a todas las páginas.
+Componente que utiliza el hook useEffect de React.
+Permite ejecutar código cada vez que cambia el estado nombre (por ejemplo, mostrar un mensaje en consola).
+Incluye un input para que el usuario escriba su nombre, y muestra un saludo dinámico.
+Uso: Demuestra cómo reaccionar a cambios de estado y realizar efectos secundarios, como logs o peticiones a APIs.
+Archivo vistanueva.jsx
 
-### `src/app/page.tsx`
-Es la página principal de la aplicación. Aquí se renderizan los componentes principales y se muestra el contenido inicial al usuario.
-
-### `src/components/boton.jsx`
-Este componente representa un botón personalizado. Puede incluir estilos, eventos de clic y lógica específica para acciones dentro de la app.
-
-### `src/components/first.jsx`
-Este componente muestra un contenido o funcionalidad específica, como un mensaje de bienvenida, una sección informativa, o cualquier elemento que se quiera destacar en la página principal.
-
----
-
-Cada componente está diseñado para ser reutilizable y modular, facilitando la organización y el mantenimiento del código.
-
-7. **Configuración de scripts**  
-   Los scripts principales en [`package.json`](package.json) son:
-   - `dev`: Inicia el servidor de desarrollo.
-   - `build`: Compila la aplicación para producción.
-   - `start`: Inicia la aplicación en modo producción.
-   - `lint`: Ejecuta ESLint.
-
-8. **Primer despliegue local**  
-   Para iniciar el proyecto localmente:
-   ```bash
-   npm run dev
-   ```
-   Luego abre [http://localhost:3000](http://localhost:3000) en tu navegador.
-
-## Recursos
-
-- [Documentación Next.js](https://nextjs.org/docs)
-- [Guía de Tailwind CSS](https://tailwindcss.com/docs/installation)
-- [Guía de ESLint](https://eslint.org/docs/latest/)
-
----
+Componente que implementa un contador usando el hook useState.
+Permite aumentar o disminuir el valor con botones.
+Uso: Ejemplo práctico de manejo de estado en React, mostrando cómo actualizar la interfaz en respuesta a acciones del usuario.
+Resumen de Usos y Conceptos
+Next.js: Framework que facilita la creación de aplicaciones React escalables y optimizadas.
+Componentes: Bloques reutilizables que permiten dividir la interfaz en partes independientes y manejables.
+Hooks (useState, useEffect): Funciones especiales de React para manejar estado y efectos secundarios en componentes funcionales.
+Layout Global: Permite definir estilos y estructuras que se aplican en toda la aplicación.
+Enrutamiento: Next.js crea rutas automáticamente según la estructura de carpetas y archivos en pages y app.
+Esta estructura y los ejemplos desarrollados te permiten entender cómo organizar un proyecto React moderno, cómo reutilizar componentes y cómo manejar la lógica de estado y efectos en tus aplicaciones.
