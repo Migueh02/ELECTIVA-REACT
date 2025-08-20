@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import Boton from '../components/boton'
+import Boton from '../components/Boton'
 
 export default function Home() {
   const [ mensaje, setMensaje ] = useState('');
