@@ -12,7 +12,7 @@ export default function Navbar() {
         }}>
 
         <Link href="/" style={{color:'white', textDecoration: 'none'}}>Inicio</Link>
-        <Link href="/lista" style={{color:'white', textDecoration: 'none'}}>Listas Basicas</Link>
+        <Link href="/lista" style={{color:'white', textDecoration: 'none'}}>Listas de Tareas</Link>
         <Link href="/products" style={{color:'white', textDecoration: 'none'}}>Productos API</Link>
         </nav>
     );
